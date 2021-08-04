@@ -14,7 +14,6 @@ const mongoUri = process.env.MONGO_URI
 app.use(cors({origin: 'http://localhost:3000'}))
 app.use((req, res, next) => {
     const ua = req.headers['user-agent'];
-    console.log(ua)
     if (ua.toString().toLowerCase().startsWith("postman")) {
         res.statusCode(500)
     }
